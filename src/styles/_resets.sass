@@ -13,6 +13,9 @@ body, html
 	scroll-behavior: smooth
 	background: var.$color-background-primary
 
+main
+	min-height: 100dvh
+
 h1
 	font-size: 24px
 	font-weight: bold
@@ -23,17 +26,18 @@ h2
 	font-weight: bold
 	color: var.$color-title-primary
 
-p[class="small-desc"]
-	font-size: 14px
-	color: var.$color-text-primary
-
-p[class="normal-desc"]
+p
 	font-size: 16px
-	color: var.$color-text-secondary
 
-p[class="intro-desc"]
-	font-size: 16px
-	color: var.$color-tag-primary
+	&.small-desc
+		font-size: 14px
+		color: var.$color-text-primary
+
+	&.normal-desc
+		color: var.$color-text-secondary
+
+	&.intro-desc
+		color: var.$color-tag-primary
 
 .hidden, .none
 	display: none
