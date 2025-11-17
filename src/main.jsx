@@ -5,6 +5,7 @@ import Intro from './pages/Intro.jsx'
 import App from './pages/App.jsx'
 import { StrictMode } from 'react'
 import Pet from './pages/Pet.jsx'
+import './styles/main.sass'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
