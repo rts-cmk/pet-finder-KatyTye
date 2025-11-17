@@ -1,7 +1,7 @@
 import AnimalImage from "../assets/images/Animal.svg"
 import { Link, useNavigate } from "react-router"
-import "../styles/_intro.sass"
 import { useEffect } from "react"
+import "../styles/_intro.sass"
 
 function Intro() {
 	const navigate = useNavigate()
