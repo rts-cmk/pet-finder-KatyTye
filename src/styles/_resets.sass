@@ -1,0 +1,39 @@
+// BROWSER RESET STYLES
+@use "./_variables.sass" as var
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	font-family: var.$font-primary
+
+body, html
+	width: 100dvw
+	min-height: 100dvh
+	scroll-behavior: smooth
+	background: var.$color-background-primary
+
+h1
+	font-size: 24px
+	font-weight: bold
+	color: var.$color-title-primary
+
+h2
+	font-size: 20px
+	font-weight: bold
+	color: var.$color-title-primary
+
+p[class="small-desc"]
+	font-size: 14px
+	color: var.$color-text-primary
+
+p[class="normal-desc"]
+	font-size: 16px
+	color: var.$color-text-secondary
+
+p[class="intro-desc"]
+	font-size: 16px
+	color: var.$color-tag-primary
+
+.hidden, .none
+	display: none
