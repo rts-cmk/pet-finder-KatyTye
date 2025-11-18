@@ -1,7 +1,9 @@
+import AnimalLister from "../components/AnimalLister.jsx"
 import { useNavigate } from "react-router"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
-function App() {
+export default function Home() {
+	const [selectedSpecies, setSelectedSpecies] = useState("dog")
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -13,12 +15,11 @@ function App() {
 		} else if (!introStatus) {
 			navigate("/intro")
 		}
-	}, [])
+	}, [navigate])
 
 	return (
 		<>
+			<AnimalLister species={selectedSpecies} amount={3} />
 		</>
 	)
 }
-
-export default App
