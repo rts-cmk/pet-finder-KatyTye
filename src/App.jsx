@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
+import userLoader from "./loaders/userLoader"
 import petLoader from "./loaders/petLoader"
+import Layout from "./pages/Layout"
 import Home from "./pages/Home"
 import Error from "./pages/Error"
 import Intro from "./pages/Intro"
@@ -10,24 +12,28 @@ function App() {
 
 	const browserRouter = createBrowserRouter([
 		{
-			path: "/",
-			element: <Home />,
-			loader: petLoader,
-			hydrateFallbackElement: <p>E</p>
-		},
-		{
-			path: "/*",
-			element: <Error />
-		},
-		{
-			path: "/intro",
-			element: <Intro />
-		},
-		{
-			path: "/details/:petParam",
-			element: <Intro />,
-			loader: petLoader,
-			hydrateFallbackElement: <p>E</p>
+			element: <Layout />,
+			loader: userLoader,
+			hydrateFallbackElement: <p>E</p>,
+			children: [
+				{
+					path: "/",
+					element: <Home />,
+					loader: petLoader
+				},
+				{
+					path: "/*",
+					element: <Error />
+				},
+				{
+					path: "/intro",
+					element: <Intro />
+				},
+				{
+					path: "/details/:petParam",
+					element: <Intro />
+				}
+			]
 		}
 	])
 
