@@ -44,8 +44,7 @@ function App() {
 				},
 				{
 					path: "/liked",
-					element: <Liked />,
-					loader: petLoader
+					element: <Liked />
 				},
 				{
 					path: "/profile",
