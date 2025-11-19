@@ -1,0 +1,53 @@
+// STYLING FOR HEADER COMPONENT
+@use './_variables.sass' as var
+
+.top-content
+	display: flex
+	align-items: center
+	padding: 25px 15px
+	justify-content: space-between
+
+	&__profile
+		gap: 15px
+		display: inherit
+		align-items: inherit
+
+		&-city
+			height: fit-content
+
+			span
+				margin: 0 5px
+
+		&-image
+			width: 40px
+			clip-path: circle(35%)
+			border: 2px solid #f0f0f5
+			transform: translate(-6%, -10%)
+
+			&-holder
+				width: 40px
+				height: 40px
+				overflow: hidden
+
+			& span
+				margin: 0 10px
+
+		&-icon
+			transform: translateY(2px)
+			color: var.$color-button-secondary
+
+		&-notifications
+			width: 40px
+			height: 40px
+			border: none
+			display: flex
+			align-items: center
+			border-radius: 100px
+			justify-content: center
+			color: var.$color-button-primary
+			box-shadow: 4px 3px 15px -6px black
+			background: var.$color-button-background-primary
+
+			& svg
+				width: 20px
+				height: 20px
