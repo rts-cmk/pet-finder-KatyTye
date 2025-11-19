@@ -5,7 +5,7 @@ export default function Home() {
 	const [selectedSpecies, setSelectedSpecies] = useState("dog")
 
 	return (
-		<main className="main-content">
+		<main className="main-content home-content">
 			<nav className="main-content__navigation">
 				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("cat")}>Cats</p>
 				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("dog")}>Dogs</p>

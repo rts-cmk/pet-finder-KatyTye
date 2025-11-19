@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router";
 import Header from "../components/Header";
-import Intro from "./Intro";
+import Footer from "../components/Footer";
 import { useState } from "react";
 
 export default function Layout() {
@@ -14,6 +14,7 @@ export default function Layout() {
 		<>
 			<Header />
 			<Outlet />
+			<Footer />
 		</>
 	)
 }

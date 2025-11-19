@@ -29,6 +29,19 @@ function App() {
 					path: "/",
 					element: <Home />,
 					loader: petLoader
+				},
+				{
+					path: "/messages",
+					element: <Home />,
+				},
+				{
+					path: "/liked",
+					element: <Home />,
+					loader: petLoader
+				},
+				{
+					path: "/profile",
+					element: <Home />,
 				}
 			]
 		}

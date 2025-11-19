@@ -1,17 +1,14 @@
+import { useNavigate } from "react-router"
 import AnimalImage from "../assets/images/Animal.svg"
-import { Link, useNavigate } from "react-router"
-import { useEffect } from "react"
 import "../styles/_intro.sass"
 
 function Intro() {
 	const navigate = useNavigate()
 
-	useEffect(() => {
-		const introStatus = Boolean(localStorage.getItem("introCompleted")) || false
-		if (introStatus) {
-			navigate("/home")
-		}
-	}, [])
+	function handle() {
+		localStorage.setItem("introCompleted", true)
+		navigate("/")
+	}
 
 	return (
 		<main className="main-content intro-content">
@@ -27,9 +24,9 @@ function Intro() {
 				</p>
 			</section>
 
-			<Link to={{ pathname: "/home", search: "?intro=completed" }} className="intro-content__button">
+			<button className="intro-content__button" onClick={() => handle()}>
 				Skip
-			</Link>
+			</button>
 		</main>
 	)
 }
