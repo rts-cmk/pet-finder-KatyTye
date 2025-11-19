@@ -3,8 +3,15 @@
 .like-button
 	cursor: pointer
 
+	& svg
+		stroke: black
+		fill: transparent
+		stroke-width: 1.5px
+		transition: fill 0.3s, stroke 0.3s
+
 	&.active svg
 		fill: red
+		stroke: red
 
 .animal-list
 	gap: 40px

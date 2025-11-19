@@ -16,6 +16,10 @@ function App() {
 			element: <Intro />
 		},
 		{
+			path: "/details/:petParam",
+			element: <Intro />
+		},
+		{
 			element: <Layout />,
 			loader: userLoader,
 			hydrateFallbackElement: <p>Loading...</p>,
@@ -25,10 +29,6 @@ function App() {
 					path: "/",
 					element: <Home />,
 					loader: petLoader
-				},
-				{
-					path: "/details/:petParam",
-					element: <Intro />
 				}
 			]
 		}
