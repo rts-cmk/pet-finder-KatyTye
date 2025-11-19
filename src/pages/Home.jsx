@@ -1,25 +1,18 @@
 import AnimalLister from "../components/AnimalLister.jsx"
-import { useNavigate } from "react-router"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 export default function Home() {
 	const [selectedSpecies, setSelectedSpecies] = useState("dog")
-	const navigate = useNavigate()
-
-	useEffect(() => {
-		const introStatus = Boolean(localStorage.getItem("introCompleted")) || false
-		const currentParam = new URLSearchParams(window.location.search).get("intro")
-
-		if (currentParam === "completed" && !introStatus) {
-			localStorage.setItem("introCompleted", "true")
-		} else if (!introStatus) {
-			navigate("/intro")
-		}
-	}, [navigate])
 
 	return (
-		<>
+		<main className="main-content">
+			<nav className="main-content__navigation">
+				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("cat")}>Cats</p>
+				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("dog")}>Dogs</p>
+				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("bird")}>Birds</p>
+				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("other")}>Other</p>
+			</nav>
 			<AnimalLister species={selectedSpecies} amount={3} />
-		</>
+		</main>
 	)
 }
