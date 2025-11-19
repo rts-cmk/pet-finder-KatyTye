@@ -12,22 +12,19 @@ function App() {
 
 	const browserRouter = createBrowserRouter([
 		{
+			path: "/intro",
+			element: <Intro />
+		},
+		{
 			element: <Layout />,
 			loader: userLoader,
-			hydrateFallbackElement: <p>E</p>,
+			hydrateFallbackElement: <p>Loading...</p>,
+			errorElement: <Error />,
 			children: [
 				{
 					path: "/",
 					element: <Home />,
 					loader: petLoader
-				},
-				{
-					path: "/*",
-					element: <Error />
-				},
-				{
-					path: "/intro",
-					element: <Intro />
 				},
 				{
 					path: "/details/:petParam",
