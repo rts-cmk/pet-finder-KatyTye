@@ -1,7 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
+import LoadingIcon from "./assets/icons/logo.svg?react"
+import detailsLoader from "./loaders/detailsLoader"
 import userLoader from "./loaders/userLoader"
 import petLoader from "./loaders/petLoader"
 import Messages from "./pages/Messages"
+import Details from "./pages/Details"
 import Layout from "./pages/Layout"
 import Profile from "./pages/Profile"
 import Home from "./pages/Home"
@@ -19,13 +22,15 @@ function App() {
 			element: <Intro />
 		},
 		{
-			path: "/details/:petParam",
-			element: <Intro />
+			path: "/details/:petId",
+			element: <Details />,
+			loader: detailsLoader,
+			hydrateFallbackElement: <LoadingIcon className="load" />
 		},
 		{
 			element: <Layout />,
 			loader: userLoader,
-			hydrateFallbackElement: <p>Loading...</p>,
+			hydrateFallbackElement: <LoadingIcon className="load" />,
 			errorElement: <Error />,
 			children: [
 				{
