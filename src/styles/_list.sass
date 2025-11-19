@@ -22,8 +22,8 @@
 
 	&__item
 		display: flex
-		height: 130px
 		padding: 0 5px
+		min-height: 130px
 		border-radius: 10px
 		background: var.$color-background-secondary
 		box-shadow: 5px 10px 25px -5px var.$color-background-primary-hover
@@ -43,6 +43,7 @@
 			width: 180px
 			overflow: hidden
 			line-height: 20px
+			margin-bottom: 15px
 			text-overflow: ellipsis
 
 		&-location
@@ -61,10 +62,10 @@
 			height: 120px
 
 		&-button
-			width: 25px
 			height: 25px
 			border: none
 			display: flex
+			min-width: 25px
 			margin-top: 15px
 			align-items: center
 			border-radius: 100px
