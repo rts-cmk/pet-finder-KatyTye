@@ -3,5 +3,5 @@ export default async function detailsLoader({ params }) {
 	const response = await fetch("https://davids-api.onrender.com/api/db")
 	const jsonData = await response.json()
 
-	return jsonData["dogs"][petId]
+	return jsonData["dogs"][petId - 1]
 }
