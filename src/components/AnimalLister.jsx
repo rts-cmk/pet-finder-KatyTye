@@ -1,8 +1,8 @@
-import { GoLocation, GoHeart, GoHeartFill } from "react-icons/go"
+import { GoLocation, GoHeartFill } from "react-icons/go"
 import { Link, useLoaderData } from "react-router"
 import "../styles/_list.sass"
 
-function AnimalLister({ species, amount }) {
+function AnimalLister({ species = "dog", amount = 4 }) {
 	const animals = useLoaderData() || []
 
 	function returnTrueTarget(event) {
@@ -13,26 +13,26 @@ function AnimalLister({ species, amount }) {
 		return newTarget
 	}
 
-	function handleLike(breedName, evt) {
+	function handleLike(breedId, evt) {
 		const likedStorage = localStorage.getItem("liked") || ""
 
-		if (likedStorage.includes(breedName)) {
-			localStorage.setItem("liked", likedStorage.replaceAll(breedName, ""))
+		if (likedStorage.includes(breedId)) {
+			localStorage.setItem("liked", likedStorage.replaceAll(breedId, ""))
 			returnTrueTarget(evt).classList.remove("active")
 		} else {
-			localStorage.setItem("liked", `${likedStorage || ""}${breedName}`)
+			localStorage.setItem("liked", `${likedStorage || ""}${breedId}`)
 			returnTrueTarget(evt).classList.add("active")
 		}
 	}
 
-	function LikeButton(breedName) {
-		breedName = breedName.breedName
+	function LikeButton(obj) {
+		const animal = obj.animal
 		const likedStorage = localStorage.getItem("liked")
-		const liked = Boolean(likedStorage?.includes(breedName)) || false
+		const liked = Boolean(likedStorage?.includes(animal.id)) || false
 
 		return (
 			<button className={`animal-list__item-button like-button ${(liked === true && "active" || "")}`}
-				onClick={event => handleLike(breedName, event)}>
+				onClick={event => handleLike(animal.id, event)}>
 				<GoHeartFill />
 			</button>
 		)
@@ -59,7 +59,7 @@ function AnimalLister({ species, amount }) {
 									</p>
 								</div>
 
-								<LikeButton breedName={animal.breed} />
+								<LikeButton animal={animal} />
 							</li>
 						)
 					}

@@ -1,5 +1,5 @@
 import AnimalLister from "../components/AnimalLister.jsx"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Home() {
 	const [selectedSpecies, setSelectedSpecies] = useState("dog")
@@ -12,7 +12,7 @@ export default function Home() {
 				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("bird")}>Birds</p>
 				<p className="main-content__navigation-button" onClick={() => setSelectedSpecies("other")}>Other</p>
 			</nav>
-			<AnimalLister species={selectedSpecies} amount={4} />
+			<AnimalLister species={selectedSpecies} />
 		</main>
 	)
 }
