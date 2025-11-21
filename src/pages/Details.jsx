@@ -26,13 +26,15 @@ function Details() {
 						</span></p>
 
 					<ol className="details-content__tags">
-						<li className="details-content__tags-breed">
+						<li className="details-content__tags-breed details-content__tag"
+							title={`Breed: ${petDetails.breed}`}>
 							<IoPawOutline />
 							<span>
 								{petDetails.breed}
 							</span>
 						</li>
-						<li className="details-content__tags-gender">
+						<li className="details-content__tags-gender details-content__tag"
+							title={`Gender: ${petDetails.gender}`}>
 							<Gender />
 							<span>
 								{petDetails.gender}

@@ -2,9 +2,72 @@
 @use './_variables.sass' as var
 
 .details-content
+	height: 100dvh
+	background: url("/background.svg")
+
+	&__title
+		font-size: 21px
+		margin-bottom: 15px
+
+	&__city
+		font-size: 15px
+		margin-bottom: 30px
+		color: var.$color-tag-primary
+
+		& svg
+			width: auto
+			height: 12px
+			margin-right: 10px
+			color: var.$color-button-primary
+
+	&__tag
+		gap: 10px
+		display: inherit
+		align-items: center
+		color: var.$color-text-primary
+
+		& span
+			height: 19px
+			overflow: hidden
+			max-width: 150px
+			text-wrap: nowrap
+			text-overflow: ellipsis "..."
+
+		& svg
+			width: 40px
+			height: 40px
+			padding: 7.5px
+			color: #F4B207
+			border-radius: 100px
+			box-shadow: 5px 5px 15px -8px black
+			background: var.$color-button-background-primary
+			// background: #1400ff
+
+			& path
+				width: 25px
+				height: 25px
+				transform: translate(2px, 2px)
+
+		&s
+			gap: 25px
+			display: flex
+			list-style-type: none
+
+	&__image
+		width: 250px
+		height: 250px
+		transform: translate(50%, 50%)
+
+	&__description
+		margin: 35px 0 52px
+		color: var.$color-text-secondary
 
 	&__container
-		padding: 0 25px
+		bottom: 0px
+		padding: 25px
+		position: absolute
+		border-radius: 25px 25px 0 0
+		background: var.$color-background-primary
 
 	&__button
 		width: 100%
