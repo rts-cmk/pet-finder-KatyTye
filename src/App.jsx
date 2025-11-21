@@ -1,8 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import LoadingIcon from "./assets/icons/logo.svg?react"
 import detailsLoader from "./loaders/detailsLoader"
-import userLoader from "./loaders/userLoader"
-import petLoader from "./loaders/petLoader"
+import dataLoader from "./loaders/dataLoader"
 import Messages from "./pages/Messages"
 import Details from "./pages/Details"
 import Layout from "./pages/Layout"
@@ -28,19 +27,19 @@ function App() {
 			hydrateFallbackElement: <LoadingIcon className="load" />
 		},
 		{
+			id: "root",
 			element: <Layout />,
-			loader: userLoader,
+			loader: dataLoader,
 			hydrateFallbackElement: <LoadingIcon className="load" />,
 			errorElement: <Error />,
 			children: [
 				{
 					path: "/",
-					element: <Home />,
-					loader: petLoader
+					element: <Home />
 				},
 				{
 					path: "/messages",
-					element: <Messages />,
+					element: <Messages />
 				},
 				{
 					path: "/liked",
@@ -48,7 +47,7 @@ function App() {
 				},
 				{
 					path: "/profile",
-					element: <Profile />,
+					element: <Profile />
 				}
 			]
 		}

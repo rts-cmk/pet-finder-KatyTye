@@ -1,9 +1,9 @@
 import { GoLocation, GoHeartFill } from "react-icons/go"
-import { Link, useLoaderData } from "react-router"
+import { Link, useRouteLoaderData } from "react-router"
 import "../styles/_list.sass"
 
 function AnimalLister({ species = "dog", amount = 4 }) {
-	const animals = useLoaderData() || []
+	const animals = useRouteLoaderData("root")["dogs"] || []
 
 	function returnTrueTarget(event) {
 		let newTarget = event.target

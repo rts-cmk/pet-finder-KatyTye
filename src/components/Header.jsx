@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router";
 import { LuBell } from "react-icons/lu";
 
 export default function Header({ hide = false }) {
-	const userData = useLoaderData()
+	const userData = useLoaderData()["user"]
 
 	return (
 		(hide === false &&
