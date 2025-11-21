@@ -10,7 +10,7 @@ export default function Header({ hide = false }) {
 			<header className="top-content">
 				<figure className="top-content__profile">
 					<div className="top-content__profile-image-holder">
-						<img src={userData.image} className="top-content__profile-image" alt="profile image"></img>
+						<img src={`.${userData.image}`} className="top-content__profile-image" alt="profile image"></img>
 					</div>
 					<figcaption className="top-content__profile-city">
 						<HiLocationMarker className="top-content__profile-icon" />

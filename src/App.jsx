@@ -51,7 +51,7 @@ function App() {
 				}
 			]
 		}
-	])
+	], { basename: "/pet-finder-KatyTye/" })
 
 	return (
 		<RouterProvider router={browserRouter} />

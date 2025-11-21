@@ -46,7 +46,7 @@ function AnimalLister({ species = "dog", amount = 4 }) {
 					if (idx < amount) {
 						return (
 							<li className="animal-list__item" key={`${animal.breed}-${animal.id}`}>
-								<img src={animal.image} alt={`image of ${animal.breed}`} className="animal-list__item-image"></img>
+								<img src={`.${animal.image}`} alt={`image of ${animal.breed}`} className="animal-list__item-image"></img>
 								<div className="animal-list__item-content">
 									<h2 className="animal-list__item-name">
 										<Link to={`/details/${animal.id}`}>{animal.breed}</Link>
