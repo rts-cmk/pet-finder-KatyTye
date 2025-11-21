@@ -1,0 +1,32 @@
+// STYLING FOR INTRO PAGE
+@use './_variables.sass' as var
+
+.intro-content
+	display: flex
+	height: 100dvh
+	padding: 0 25px
+	overflow: hidden
+	text-align: center
+	align-items: center
+	flex-direction: column
+	justify-content: space-around
+
+	&__title
+		margin-bottom: 10px
+
+	&__text
+		line-height: 24px
+
+	&__section
+		margin-bottom: 100px
+
+	&__button
+		width: 100%
+		border: none
+		padding: 10px
+		cursor: pointer
+		font-weight: bold
+		text-decoration: none
+		border-radius: 100px
+		color: var.$color-primary
+		background: var.$color-button-secondary

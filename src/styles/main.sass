@@ -1,0 +1,35 @@
+// STYLESHEET MAIN FILE
+
+// VARIABLES
+@use "./variables.sass" as var
+
+// RESETS
+@use "./_resets.sass"
+
+// HEADER
+@use "./_header.sass"
+
+// FOOTER
+@use "./_footer.sass"
+
+// NAVIGATION
+@use "./_nav.sass"
+
+// ERROR
+@use "./_error.sass"
+
+// OTHER STYLING
+.load
+	top: 50%
+	left: 50%
+	width: 50dvw
+	display: block
+	position: absolute
+	transform: translate(-50%, -50%)
+	color: var.$color-button-secondary
+
+main.home-content
+	padding-bottom: 125px
+
+.liked-content, .messages-content, .profile-content
+	padding: 25px

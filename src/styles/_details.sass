@@ -1,0 +1,92 @@
+// STYLING FOR HEADER COMPONENT
+@use './_variables.sass' as var
+
+.details-content
+	height: 100dvh
+	background: url("/background.svg") no-repeat
+
+	&.main-content
+		background-size: cover
+
+	&__holder
+		display: flex
+		height: 100dvh
+		flex-direction: column
+
+	&__title
+		font-size: 21px
+		margin-bottom: 15px
+
+	&__city
+		font-size: 15px
+		margin-bottom: 30px
+		color: var.$color-tag-primary
+
+		& svg
+			width: auto
+			height: 12px
+			margin-right: 10px
+			color: var.$color-button-primary
+
+	&__tag
+		gap: 10px
+		display: inherit
+		align-items: center
+		color: var.$color-text-primary
+
+		& span
+			height: 19px
+			overflow: hidden
+			max-width: 150px
+			text-wrap: nowrap
+			text-overflow: ellipsis "..."
+
+		& svg
+			width: 40px
+			height: 40px
+			padding: 7.5px
+			color: #F4B207
+			border-radius: 100px
+			box-shadow: 5px 5px 15px -8px black
+			background: var.$color-button-background-primary
+
+			& path
+				width: 25px
+				height: 25px
+				transform: translate(2px, 2px)
+
+		&s
+			gap: 25px
+			display: flex
+			list-style-type: none
+
+	&__image
+		width: 250px
+		height: 250px
+		margin-left: auto
+		margin-top: auto
+
+	&__description
+		margin: 35px 0 52px
+		color: var.$color-text-secondary
+
+	&__container
+		bottom: 0px
+		padding: 25px
+		position: relative
+		max-width: 500px
+		border-radius: 25px 25px 0 0
+		background: var.$color-background-primary
+
+	&__button
+		width: 100%
+		border: none
+		padding: 10px
+		display: block
+		cursor: pointer
+		font-weight: bold
+		text-align: center
+		text-decoration: none
+		border-radius: 100px
+		color: var.$color-primary
+		background: var.$color-button-secondary
