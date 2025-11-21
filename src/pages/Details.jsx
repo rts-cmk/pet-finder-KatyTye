@@ -7,8 +7,6 @@ import "../styles/_details.sass"
 function Details() {
 	const petDetails = useLoaderData() || {}
 
-	console.log(petDetails)
-
 	return (
 		<main className="main-content details-content">
 			<figure className="details-content__holder">
