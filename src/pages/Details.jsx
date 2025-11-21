@@ -10,7 +10,7 @@ function Details() {
 	return (
 		<main className="main-content details-content">
 			<figure className="details-content__holder">
-				<img src={`.${petDetails.image}`} alt={`image of ${petDetails.breed}`}
+				<img src={`..${petDetails.image}`} alt={`image of ${petDetails.breed}`}
 					className="details-content__image"></img>
 				<figcaption className="details-content__container">
 					<h2 className="details-content__title">
