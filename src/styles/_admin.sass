@@ -1,0 +1,40 @@
+// STYLING FOR HEADER COMPONENT
+@use './_variables.sass' as var
+
+.admin-content
+	&__form
+		gap: 25px
+		display: flex
+		padding: 25px
+		flex-direction: column
+
+		&-output
+			height: 19px
+			text-align: center
+
+		&-title
+			text-align: center
+
+		&-input
+			border: none
+			width: 200px
+			padding: 5px
+			background: white
+
+			&.long-text
+				resize: none
+				height: 125px
+				margin-left: 10px
+
+		&-button
+			color: white
+			border: none
+			cursor: pointer
+			padding: 10px 0
+			font-weight: bold
+			border-radius: 100px
+			background: var.$color-button-secondary
+
+		&-label
+			display: inherit
+			justify-content: space-between
