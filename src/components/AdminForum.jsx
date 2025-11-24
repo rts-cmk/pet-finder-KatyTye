@@ -10,7 +10,6 @@ export default function () {
 		apiSubmit(event.target, setMessage)
 	};
 
-
 	return (
 		<form className={"admin-content__form"} method="post" onSubmit={submitForum}>
 			<h2 className="admin-content__form-title">
