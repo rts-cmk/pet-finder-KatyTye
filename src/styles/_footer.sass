@@ -1,0 +1,33 @@
+// STYLING FOR FOOTER COMPONENT
+@use './_variables.sass' as var
+
+.bottom-content
+	display: flex
+	height: 125px
+	bottom: -25px
+	width: 100dvw
+	position: fixed
+	max-width: 500px
+	border-radius: 25px
+	justify-content: space-evenly
+	background: var.$color-background-secondary
+
+	&__button
+		width: 40px
+		height: 40px
+		display: flex
+		margin-top: 17.5px
+		border-radius: 100px
+		transition: box-shadow 0.5s, background 0.5s
+		color: var.$color-button-third
+		box-shadow: 4px 3px 15px -6px black
+		background: var.$color-button-background-primary
+
+		& svg
+			width: 20px
+			height: 20px
+			margin: auto
+
+		&.active
+			box-shadow: 3px 3px 9px -8px black
+			background: linear-gradient(-45deg, transparent 20%, #d4d4e7)
