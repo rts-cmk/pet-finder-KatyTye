@@ -10,7 +10,7 @@ function Admin() {
 				<AdminForum />
 			}
 			{(savedKey !== import.meta.env.VITE_ADMIN_KEY) &&
-				<p>You are not a admin</p>
+				<p className="admin-content__reject">You are not a admin</p>
 			}
 		</main>
 	)
