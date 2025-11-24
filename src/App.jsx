@@ -6,6 +6,7 @@ import Messages from "./pages/Messages"
 import Details from "./pages/Details"
 import Layout from "./pages/Layout"
 import Profile from "./pages/Profile"
+import Admin from "./pages/Admin"
 import Home from "./pages/Home"
 import Error from "./pages/Error"
 import Liked from "./pages/Liked"
@@ -33,6 +34,10 @@ function App() {
 			hydrateFallbackElement: <LoadingIcon className="load" />,
 			errorElement: <Error />,
 			children: [
+				{
+					path: "/admin",
+					element: <Admin />,
+				},
 				{
 					path: "/",
 					element: <Home />
