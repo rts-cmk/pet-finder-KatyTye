@@ -28,11 +28,11 @@ function AnimalLister({ species = "dogs", amount = 4 }) {
 	function LikeButton(obj) {
 		const animal = obj.animal
 		const likedStorage = localStorage.getItem("liked")
-		const liked = Boolean(likedStorage?.includes(animal.id)) || false
+		const liked = Boolean(likedStorage?.includes(`${animal.breed}-${animal.id}`)) || false
 
 		return (
 			<button className={`animal-list__item-button like-button ${(liked === true && "active" || "")}`}
-				onClick={event => handleLike(animal.id, event)}>
+				onClick={event => handleLike(`${animal.breed}-${animal.id}`, event)}>
 				<GoHeartFill />
 			</button>
 		)
