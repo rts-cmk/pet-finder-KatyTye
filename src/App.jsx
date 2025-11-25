@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import LoadingIcon from "./assets/icons/logo.svg?react"
-import detailsLoader from "./loaders/detailsLoader"
 import dataLoader from "./loaders/dataLoader"
 import Messages from "./pages/Messages"
 import Details from "./pages/Details"
@@ -20,12 +19,6 @@ function App() {
 		{
 			path: "/intro",
 			element: <Intro />
-		},
-		{
-			path: "/details/:petId",
-			element: <Details />,
-			loader: detailsLoader,
-			hydrateFallbackElement: <LoadingIcon className="load" />
 		},
 		{
 			id: "root",
@@ -53,7 +46,11 @@ function App() {
 				{
 					path: "/profile",
 					element: <Profile />
-				}
+				},
+				{
+					path: "/details/:petId",
+					element: <Details />
+				},
 			]
 		}
 	], { basename: "/pet-finder-KatyTye/" })
