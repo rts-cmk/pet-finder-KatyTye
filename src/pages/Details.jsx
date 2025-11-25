@@ -1,11 +1,13 @@
 import Gender from "../assets/icons/gender.svg?react"
-import { Link, useLoaderData } from "react-router"
+import { Link, useRouteLoaderData } from "react-router"
 import { IoPawOutline } from "react-icons/io5"
 import { GoLocation } from "react-icons/go"
 import "../styles/_details.sass"
 
 function Details() {
-	const petDetails = useLoaderData() || {}
+	const currentPath = location.pathname.split("/")[3]
+	const currentParam = currentPath.split("-")[1] - 1
+	const petDetails = useRouteLoaderData("root")[`${currentPath.split("-")[0]}s`][currentParam] || {}
 
 	return (
 		<main className="main-content details-content">
