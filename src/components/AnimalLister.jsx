@@ -2,8 +2,8 @@ import { GoLocation, GoHeartFill } from "react-icons/go"
 import { Link, useRouteLoaderData } from "react-router"
 import "../styles/_list.sass"
 
-function AnimalLister({ species = "dog", amount = 4 }) {
-	const animals = useRouteLoaderData("root")["dogs"] || []
+function AnimalLister({ species = "dogs", amount = 4 }) {
+	const animals = useRouteLoaderData("root")[species] || []
 
 	function returnTrueTarget(event) {
 		let newTarget = event.target
@@ -41,6 +41,7 @@ function AnimalLister({ species = "dog", amount = 4 }) {
 	return (
 
 		<ul className={`animal-list ${species}-type`}>
+			{animals.length === 0 && <li className="animal-list__error">There is no {species} available</li>}
 			{animals.length > 0 && (
 				animals.map((animal, idx) => {
 					if (idx < amount) {
@@ -49,7 +50,7 @@ function AnimalLister({ species = "dog", amount = 4 }) {
 								<img src={`.${animal.image}`} alt={`image of ${animal.breed}`} className="animal-list__item-image"></img>
 								<div className="animal-list__item-content">
 									<h2 className="animal-list__item-name">
-										<Link to={`/details/${animal.id}`}>{animal.breed}</Link>
+										<Link to={`/details/${species.replaceAll("s", "")}-${animal.id}`}>{animal.breed}</Link>
 									</h2>
 									<p className="animal-list__item-location">
 										<GoLocation /> {animal.location}
